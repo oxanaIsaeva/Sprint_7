@@ -1,6 +1,7 @@
 import allure
 import requests
 import pytest
+from data import Data
 
 
 class TestCreateOrder:
@@ -29,7 +30,7 @@ class TestCreateOrder:
             "comment": "test test",
             "color": color
         }
-        response = requests.post('http://qa-scooter.praktikum-services.ru/api/v1/orders', data=payload)
-        r = response.json()
+        response = requests.post(f'{Data.URL}/api/v1/orders', data=payload)
+        format_response = response.json()
 
-        assert response.status_code == 201 and 'track' in r.keys()
+        assert response.status_code == 201 and 'track' in format_response.keys()

@@ -2,6 +2,9 @@ import random
 
 
 class Data:
+
+    URL = 'http://qa-scooter.praktikum-services.ru'
+
     number = random.randint(11, 99)
 
     CREATE_COURIER = {
@@ -27,4 +30,3 @@ class Data:
         "login": "ohhOxanaOh",
         "password": "12345"
     }
-
